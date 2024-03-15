@@ -3,6 +3,7 @@
 This project created to fulfill the test for paper.id
 
 The project using several tech that desribed below:
+- Node 20.10.0
 - Angular 17.2.3
 - Angular HttpClientModule to fetch nesessary data
 - @fortawesome/angular-fontawesome for icons
