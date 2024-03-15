@@ -1,0 +1,30 @@
+<div class="table-container">
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Website</th>
+        <th>Company</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody *ngIf="dataList.length">
+      <tr *ngFor="let data of dataList">
+        <td>{{data.name}}</td>
+        <td>{{data.email}}</td>
+        <td>{{data.phone}}</td>
+        <td>{{data.website}}</td>
+        <td>{{data.company.name}}</td>
+        <td>
+          <button (click)="onSelectedUser(data)">Detail</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div *ngIf="loading" class="shimmer">
+    <fa-icon [icon]="faSpinner" size="3x"></fa-icon>
+    <span>Loading...</span>
+  </div>
+</div>

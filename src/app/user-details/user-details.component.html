@@ -1,0 +1,84 @@
+<div *ngIf="show" class="modal" (click)="onCloseModal()">
+  <div clickStopPropagation>
+    <div *ngIf="loading" class="shimmer">
+      <fa-icon [icon]="faSpinner" size="3x"></fa-icon>
+      <span>Loading...</span>
+    </div>
+    
+    <ng-container *ngIf="!loading">
+      <div class="modal-content__bg" [style]="onSetBackground()">
+        <button (click)="onCloseModal()">
+          <fa-icon [icon]="faX"></fa-icon>
+        </button>
+      </div>
+    
+      <div class="modal-content-container">
+        <div>
+          <span class="text--lg font--semibold">{{data.name}}</span>
+          <span class="font--regular">{{data.username}}</span>
+          
+          <a href="{{data.website}}" target="_blank">
+            <fa-icon [icon]="faLink"></fa-icon>
+            {{data.website}}
+          </a>
+
+          <a href="mailto:{{data.email}}">
+            <fa-icon [icon]="faEnvelope"></fa-icon>
+            {{data.email}}
+          </a>
+          
+          <a href="tel:{{data.phone}}" class="font--regular">
+            <fa-icon [icon]="faPhone"></fa-icon>
+            {{data.phone}}
+          </a>
+        </div>
+
+        <div>
+          <h2 class="text--lg font--semibold">Address</h2>
+
+          <div class="flex flex--col">
+            <span class="text--xs font--semibold">Street</span>
+            <a
+              class="font--regular"
+              href="https://maps.google.com/?ll={{data.address.geo.lat}},{{data.address.geo.lng}}" 
+              target="_blank"
+            >
+            <fa-icon [icon]="faLocationDot"></fa-icon>
+            {{data.address.street}}
+          </a>
+          </div>
+
+          <div class="flex flex--col">
+            <span class="text--xs font--semibold">Suite</span>
+            <span class="font--regular">{{data.address.suite}}</span>
+          </div>
+
+          <div class="flex flex--col">
+            <span class="text--xs font--semibold">City</span>
+            <span class="font--regular">{{data.address.city}}</span>
+          </div>
+
+          <div class="flex flex--col">
+            <span class="text--xs font--semibold">Zip Code</span>
+            <span class="font--regular">{{data.address.zipcode}}</span>
+          </div>
+        </div>
+
+        <div>
+          <h2 class="text--lg font--semibold">Company</h2>
+
+          <div class="flex flex--col">
+            <span class="text--xs font--semibold">Name</span>
+            <span class="font--regular">{{data.company.name}}</span>
+            <span><i><strong>"{{data.company.catchPhrase}}"</strong></i></span>
+          </div>
+
+          <div class="flex flex--col">
+            <span class="text--xs font--semibold">Business Service</span>
+            <span class="font--regular">{{data.company.bs}}</span>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>

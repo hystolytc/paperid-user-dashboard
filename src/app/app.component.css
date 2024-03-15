@@ -1,0 +1,12 @@
+.layout {
+  padding: 0 16px;
+  padding-top: 76px;
+  min-height: 100vh;
+}
+
+@media (max-width: 640px) {
+  .layout {
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+}

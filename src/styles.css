@@ -1,1 +1,46 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  font-family: "Poppins", sans-serif;
+  color: #5a5a5a;
+}
+
+a {
+  text-decoration: none;
+}
+
+.text--lg {
+  font-size: 20px;
+}
+.text--xs {
+  font-size: 12px;
+}
+
+.font--semibold {
+  font-weight: 600;
+}
+
+.font--regular {
+  font-weight: 400;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex--col {
+  flex-direction: column;
+  gap: 4px;
+}
+
+.shimmer {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
